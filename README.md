@@ -1,2 +1,3 @@
-#Int Bank
-- This code contains demo code for TBC academy course intro to python
+#Intro to python
+- This repo contains demo code for the TBC Academy's "intro to python" course
+
