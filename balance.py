@@ -1,6 +1,6 @@
 # რომ იმუშაოს [{"id": "TB001", "name": "davit", "surname": "darjania", "balance": 20, "loan": 0}]
 # ასეთი სახით უნდა იყოს ჩაწერილი მონაცემთა ბაზა variables - ში უნდა იყოს DB
-from variables import DB
+from Variablies import DB
 def add_balance():
     your_id = input("Write your ID: ")
     if not check_the_presence_of_value(your_id):
