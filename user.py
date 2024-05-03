@@ -1,5 +1,5 @@
-# from Variablies import DB
-DB = [{"id": "TB0001", "name": "davit", "surname": "darjania", "balance": 20, "loan": 10}]
+from Variablies import DB
+# DB = [{"id": "TB0001", "name": "davit", "surname": "darjania", "balance": 20, "loan": 10}]
 def check_iban_format(iban):
     if not iban.upper().startswith("TB"):
         return False,"Wrong prefix for account!" 
@@ -26,6 +26,4 @@ def get_user_info(iban):
     else:
         print(error)
 
-    
-# user = get_user_info("TB0001")
 
