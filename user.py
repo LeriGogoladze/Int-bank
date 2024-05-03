@@ -26,6 +26,4 @@ def get_user_info(iban):
     else:
         print(error)
 
-    
-# user = get_user_info("TB0001")
 
