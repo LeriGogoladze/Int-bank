@@ -1,5 +1,4 @@
 from Register_user import Register_user
-from Variablies import EX_INPUT_BALANCE, EX_BASE_ERROR
 from balance import add_balance, transaction
 from user import get_user_info
 from loan_calculator import calculate_loan
@@ -31,8 +30,8 @@ def main():
                 calculate_loan(iban)
             elif Operation == '7':
                 break
-        except:
-            print(EX_BASE_ERROR) 
+        except Exception as e:
+            print(e) 
             continue
 
 if __name__ == "__main__":
