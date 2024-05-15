@@ -39,7 +39,7 @@ def make_csv_transaction(f, t, a): #გადაეცემა პირად�
             name_to = i["name"]
             surname_to = i["surname"]
     current_time = current_time_returner()    
-    with open("bank/transactions.csv", "a") as csv_file:
+    with open("transactions.csv", "a") as csv_file:
         fieldnames = (["From", "To", "Amount", "Time"])
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writerow({"From": f"{name_from} {surname_from}", "To": f"{name_to} {surname_to}", "Amount": a, "Time": current_time})
