@@ -47,7 +47,6 @@ def current_time_returner():
     local_time = time.localtime()
     current_time = time.strftime("%B %d %Y %H:%M:%S%p GMT%Z", local_time)
     return current_time
-transaction()
 def check_the_presence_of_value(some):
     a = False
     for i in DB:
