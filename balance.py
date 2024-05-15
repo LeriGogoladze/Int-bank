@@ -11,7 +11,6 @@ def add_balance():
     for i in DB:
         if your_id in i.values():
             i["balance"] += int(amount)
-    print(DB)
 def transaction():
     from_who = input("Write Your ID: ")
     to_who = input("Write ID of addressee: ")
@@ -29,7 +28,6 @@ def transaction():
             i['balance'] -= int(amount_to_send)
         if to_who in i.values():
             i["balance"] += int(amount_to_send)
-    print(DB) 
 import csv #გადაეცემა პირადი ნომრები transaction- ფუნქციიდან, იქედანვე იღებს სახელებს, გვარებს და ადგენს მონაცემებს 
 import time
 def make_csv_transaction(f, t, a):
@@ -45,7 +43,6 @@ def make_csv_transaction(f, t, a):
         fieldnames = (["From", "To", "Amount", "Time"])
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writerow({"From": f"{name_from} {surname_from}", "To": f"{name_to} {surname_to}", "Amount": a, "Time": current_time})
-
 def current_time_returner():
     local_time = time.localtime()
     current_time = time.strftime("%B %d %Y %H:%M:%S%p GMT%Z", local_time)
