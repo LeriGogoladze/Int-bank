@@ -28,6 +28,7 @@ def transaction():
             i['balance'] -= int(amount_to_send)
         if to_who in i.values():
             i["balance"] += int(amount_to_send)
+    make_csv_transaction(from_who,to_who, amount_to_send)
 import csv 
 import time
 def make_csv_transaction(f, t, a): #გადაეცემა პირადი ნომრები transaction - ფუნქციიდან, იქედანვე იღებს სახელებს, გვარებს და ადგენს მონაცემებს 
