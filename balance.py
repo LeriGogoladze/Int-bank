@@ -30,6 +30,27 @@ def transaction():
         if to_who in i.values():
             i["balance"] += int(amount_to_send)
     print(DB) 
+import csv
+import time
+def make_csv_transaction(f, t, a):
+    for i in DB:
+        if f in i.values():
+            name_from = i["name"]
+            surname_from = i["surname"]
+        if t in i.values():
+            name_to = i["name"]
+            surname_to = i["surname"]
+    current_time = current_time_returner()    
+    with open("bank/transactions.csv", "a") as csv_file:
+        fieldnames = (["From", "To", "Amount", "Time"])
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        writer.writerow({"From": f"{name_from} {surname_from}", "To": f"{name_to} {surname_to}", "Amount": a, "Time": current_time})
+
+def current_time_returner():
+    local_time = time.localtime()
+    current_time = time.strftime("%B %d %Y %H:%M:%S%p GMT%Z", local_time)
+    return current_time
+transaction()
 def check_the_presence_of_value(some):
     a = False
     for i in DB:
