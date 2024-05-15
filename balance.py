@@ -1,5 +1,5 @@
-# რომ იმუშაოს [{"id": "TB001", "name": "davit", "surname": "darjania", "balance": 20, "loan": 0}]
-# ასეთი სახით უნდა იყოს ჩაწერილი მონაცემთა ბაზა variables - ში უნდა იყოს DB
+# რომ იმუშაოს DB = [{"id": "TB001", "name": "davit", "surname": "darjania", "balance": 20, "loan": 0}]
+# ასეთი სახით უნდა იყოს ჩაწერილი მონაცემთა ბაზა. (variables - ში უნდა იყოს DB)
 from Variablies import DB
 def add_balance():
     your_id = input("Write your ID: ")
@@ -28,9 +28,9 @@ def transaction():
             i['balance'] -= int(amount_to_send)
         if to_who in i.values():
             i["balance"] += int(amount_to_send)
-import csv #გადაეცემა პირადი ნომრები transaction- ფუნქციიდან, იქედანვე იღებს სახელებს, გვარებს და ადგენს მონაცემებს 
+import csv 
 import time
-def make_csv_transaction(f, t, a):
+def make_csv_transaction(f, t, a): #გადაეცემა პირადი ნომრები transaction - ფუნქციიდან, იქედანვე იღებს სახელებს, გვარებს და ადგენს მონაცემებს 
     for i in DB:
         if f in i.values():
             name_from = i["name"]
@@ -43,7 +43,7 @@ def make_csv_transaction(f, t, a):
         fieldnames = (["From", "To", "Amount", "Time"])
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writerow({"From": f"{name_from} {surname_from}", "To": f"{name_to} {surname_to}", "Amount": a, "Time": current_time})
-def current_time_returner():
+def current_time_returner(): # აბრუნებს ზუსტ ახლანდელ დროს 
     local_time = time.localtime()
     current_time = time.strftime("%B %d %Y %H:%M:%S%p GMT%Z", local_time)
     return current_time
