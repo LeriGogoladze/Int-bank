@@ -5,7 +5,7 @@ import csv
 def calculate_payments(period_in_months,loan,interest):
     beginning_balance = loan	
     ending_balance = 0
-    monthly_intersest = interest/period_in_months
+    monthly_intersest = interest/100/period_in_months
     
     data_list = [["Month", "Beginning Balance", "Interest","Principal","Ending Balance"]]
     
