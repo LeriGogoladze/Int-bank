@@ -3,6 +3,11 @@ from Variablies import DB
 import csv
 
 def calculate_payments(period_in_months,loan,interest):
+
+    if interest <= 0:
+        print("Interest rate must be more than 0 !")
+        return
+    
     beginning_balance = loan	
     ending_balance = 0
     monthly_intersest = interest/100/period_in_months
