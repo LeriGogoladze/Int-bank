@@ -61,6 +61,7 @@ def calculate_loan(iban):
                     print(f"Your balance is filled with {int(loan_amount)} GEL")
                     
                     #calculates loan schedule per month and generates csv file
-                    calculate_payments(12,loan_amount,interest_rate)
+                    calculate_payments(12,int(loan_amount),interest_rate)
+                    print("loan schedule file is generated")
     else:
         print(error)
